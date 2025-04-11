@@ -1,0 +1,109 @@
+{
+  "query": "what is the flight status of aa 450 of phx to sat today",
+  "success": true,
+  "timestamp": "2025-04-11T09:45:49.405932",
+  "search_results": [
+    {
+      "title": "AA450 (AAL450) American Airlines Flight Tracking and History - FlightAware",
+      "snippet": "Flight status, tracking, and historical data for American Airlines 450 (AA450/AAL450) including scheduled, estimated, and actual departure and arrival times.",
+      "url": "https://www.flightaware.com/live/flight/AAL450"
+    },
+    {
+      "title": "(AA) American Airlines 450 Flight Tracker - FlightStats",
+      "snippet": "AA450 Flight Tracker - Track the real-time flight status of American Airlines AA 450 live using the FlightStats Global Flight Tracker. See if your flight has been delayed or cancelled and track the live position on a map.",
+      "url": "https://www.flightstats.com/v2/flight-tracker/AA/450"
+    },
+    {
+      "title": "Flight status - Flight status by city, cities, or flight number ...",
+      "snippet": "Check the status of your American Airlines flight by city, city pair, or flight number.",
+      "url": "https://www.aa.com/travelInformation/flights/status/lookup"
+    },
+    {
+      "title": "PHX-SAT Flight Status",
+      "snippet": "(PHX to SAT) Track the current status of flights departing from (PHX) Phoenix Sky Harbor International Airport and arriving in (SAT) San Antonio International Airport",
+      "url": "https://www.flightstats.com/v2/flight-tracker/route/PHX/SAT"
+    },
+    {
+      "title": "Phoenix Airport (PHX) Departures - Today",
+      "snippet": "Check the status of your flight to Phoenix Airport (PHX) using the information on our departures page. The data on departures times and status is frequently updated in real time. To simplify your search, you have the option to filter results by Airline or Time period, or you can use the search box to find your flight directly. Once located, you can click on the flight number or the [+] symbol ...",
+      "url": "https://www.phoenix-airport.com/phx-sky-harbor-departures"
+    },
+    {
+      "title": "American Airlines AA450 (AAL450) PHX to SAT, ORD to CLT ... - Flightera",
+      "snippet": "American Airlines FLIGHT AA450 from Phoenix to San Antonio and Chicago to Charlotte and Dallas to West Palm Beach and West Palm Beach to Dallas. On-time Performance, delay statistics and flight information for AA450",
+      "url": "https://www.flightera.net/en/flight/American+Airlines/AA450"
+    },
+    {
+      "title": "Flight AA450 / AAL450 - American Airlines - AirNav Radar Flight Tracker",
+      "snippet": "Real-time flight tracking with one of the best and most accurate ADS-B coverage worldwide. Check airport arrivals and departures status and aircraft history.",
+      "url": "https://www.airnavradar.com/data/flights/AA450"
+    },
+    {
+      "title": "American Airlines AA450 Flight Status: Phoenix to San Antonio Tracker ...",
+      "snippet": "Check real-time flight status of AA450 from Phoenix to San Antonio on Trip.com. Find latest flight arrivals & departures and other travel information. Book American Airlines flight tickets with us!",
+      "url": "https://www.trip.com/flights/status-aa450/"
+    },
+    {
+      "title": "American Airlines departures from Phoenix PHX airport - Flight Status",
+      "snippet": "American Airlines departures from Phoenix PHX airport American Airlines Phoenix PHX airport departures allow to check status of American Airlines flights departure from Phoenix Sky Harbor International Airport the information about flight delay status, schedule, terminal and gate. Departure times are given in local time.",
+      "url": "https://flight-status.com/american-airlines/phx-departures"
+    },
+    {
+      "title": "American Airlines flights from Phoenix to San Antonio - PHX to SAT today",
+      "snippet": "List 3 flights operated by American Airlines from Phoenix to San Antonio (PHX to SAT) with detail status and information.",
+      "url": "https://flight-status.com/american-airlines-route/phx-to-sat"
+    }
+  ],
+  "scraped_content": [
+    {
+      "success": false,
+      "url": "https://www.flightaware.com/live/flight/AAL450",
+      "error": "'dict' object has no attribute 'title'"
+    },
+    {
+      "success": false,
+      "url": "https://www.flightstats.com/v2/flight-tracker/AA/450",
+      "error": "'dict' object has no attribute 'title'"
+    },
+    {
+      "success": false,
+      "url": "https://www.aa.com/travelInformation/flights/status/lookup",
+      "error": "'dict' object has no attribute 'title'"
+    },
+    {
+      "success": false,
+      "url": "https://www.flightstats.com/v2/flight-tracker/route/PHX/SAT",
+      "error": "'dict' object has no attribute 'title'"
+    },
+    {
+      "success": false,
+      "url": "https://www.phoenix-airport.com/phx-sky-harbor-departures",
+      "error": "'dict' object has no attribute 'title'"
+    },
+    {
+      "success": false,
+      "url": "https://www.flightera.net/en/flight/American+Airlines/AA450",
+      "error": "'dict' object has no attribute 'title'"
+    },
+    {
+      "success": false,
+      "url": "https://www.airnavradar.com/data/flights/AA450",
+      "error": "'dict' object has no attribute 'title'"
+    },
+    {
+      "success": false,
+      "url": "https://www.trip.com/flights/status-aa450/",
+      "error": "'dict' object has no attribute 'title'"
+    },
+    {
+      "success": false,
+      "url": "https://flight-status.com/american-airlines/phx-departures",
+      "error": "'dict' object has no attribute 'title'"
+    },
+    {
+      "success": false,
+      "url": "https://flight-status.com/american-airlines-route/phx-to-sat",
+      "error": "'dict' object has no attribute 'title'"
+    }
+  ]
+}

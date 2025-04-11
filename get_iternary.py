@@ -22,13 +22,14 @@ def generate_flight_notifications():
         'sec-fetch-mode': 'cors',
         'sec-fetch-site': 'same-site',
         'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-        'authorization': f'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0MzU0NDE0LCJqdGkiOiJkZTkwZDJjZmVjZWE0MTYxOGNhMzcwZjUyYjBkMjA1NCIsInVzZXJfaWQiOiJkYXNoYm9hcmR1c2VyQHlvcG1haWwuY29tIn0.tUgPHHFZlQqIlPs7yWgpY8mp-89ZchLFHyP3ZuAiMLeG5XG_TSU__96UWXXbSiIkkgjtMc234DiuX53RoJu8Z36gzWV0rYeWSUIcUixdodRe7plQKkN0M01O9faC3aFPCFz8H-E_82AfLVmNMM8uG1LpUKHBQ5gurxcel3oGCeDWKjKBtbdt_HqzuVVEbU-L-UfrsmONTJsOyVgmD7AqsXKoea8WsQhWBPDxklra_MFcS-izR-ZP7zEr1xOzX6szf4Z1A6QlNZQZ8LXPi2S9MlV4zGMi6CvgoeNls37ikYj-CzJGLYA0_SKbYqVs4z8GzHdfC8A-uec2RQzvvxp4Fh7ZjaLcevNZz3uWwvgUNg7RFJ7ep6XlEGvR_sxwRmxeAuWxhhyZzr4utC7IawHuMdZZFvTz9yQ_A4vFDukufFVf025ElZSVKha1P5mfHEWn9rerIZHGOpnSxqYxs2c4DbJBiQN1TTzAJIrb6DDLdfgM5M1em252UwCFg_4ZZ-1X65JoHQ5KDce1Gq9zR3-FAfOFw7kcWTjhyW1p4iyAS6eVnnXgChXqI5Ifv3dE2Bzkjwgoff4jWx51SyUmNmxUL3dzwJHjkuETtkKL5VVCZrbZsrk5JcbxEe3FaJTD4nyv0ytB2JhnoyQY9nDrOZz680nwirMh40mZ5LSvlf78fHc'
+        'authorization': f'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0Mzk4MjEzLCJqdGkiOiJmNzNkMWNjYzk4YmI0ODI4YjZmMGVmMWM4NGM5N2VmZCIsInVzZXJfaWQiOiJkYXNoYm9hcmR1c2VyQHlvcG1haWwuY29tIn0.U1ihaJhRdb9qAnrHURULvdJZt9DJR0D1oMWzxE_-oobOSuTyQ8JJf6NzbkSZLvPt7H9mgnIB4pcMp2f92UyuPpFHG2VCrRCSMizxtYnA73f-2P4bjn4NsufDvXD1PL2bQQWufDlp7o2DXARXq9yItko2rdXhvd3SI-8yn3KnobDu0N2X9jyEDjIBHymGBbS59hEmLNXYzRcGa3CNWpmH2OKZGOOrJokwglFau3OdT1S3juqZlgdJYyy2EDGsNn7PWU_Uw95aA3BycTlZG6qbPBoKxkXKel80USmeJzF7u3LxWlecrAfrsGtzENNp2x_gJPAuax4CB9DuJ4gU731au7U9YlAOAYQy9aqQRjz-o_rHCxErDi0K3MTi1n132eVxD7euE0H-guq8l4tofNgru0l8eHb8UV7WVqOFTgq3b_MRfbVJIMJ5sEUqNRJAyYcOqYdRFl0cVxwhigMt3ZjY1ScFAYMOFmBgYyixzTTc2dhASYKsn4NDEhx-8hXf7-H9xpomRTGqqQgUpzbaXXfa9zyS88vySQID7aftaHz0EjgivJ1WWYSq8RaWZ3zeIdemCu74aSnBKtb0mavPBd8P8rC-dhlWNHz9WB-Cm61dkUuMycwabwbUm_rpeoU6v4Lz4FISTUbJgqiVMstGFP08Hes9r8FsQ8inCyHj5xIj8ho'
     }
 
     response = requests.get(url, params=params, headers=headers)
     data = response.json()
+    print(f"Response: {data}")
     now = datetime.now(timezone.utc)
-    final_data_to_share = {"Pre Info": {}, "Current Info": {}, "Post Info": {}}
+    final_data_to_share = {"pre_info": {}, "current_info": {}, "post_info": {}}
     for each in data["data"]:
         initial_trip_details = each['trip_details']
         trip_id = initial_trip_details['trip_id']
@@ -138,11 +139,11 @@ def generate_flight_notifications():
                         leg_info.update({"title": "Flight"})
                         leg_info.update({"mode": "flight"})
                         if pre:
-                            final_data_to_share["Pre Info"].setdefault(each_pax_id, []).append(leg_info)
+                            final_data_to_share["pre_info"].setdefault(each_pax_id, []).append(leg_info)
                         elif current:
-                            final_data_to_share["Current Info"].setdefault(each_pax_id, []).append(leg_info)
+                            final_data_to_share["current_info"].setdefault(each_pax_id, []).append(leg_info)
                         elif post:
-                            final_data_to_share["Post Info"].setdefault(each_pax_id, []).append(leg_info)
+                            final_data_to_share["post_info"].setdefault(each_pax_id, []).append(leg_info)
                 except Exception as ex:
                     print(f"Error occurred while processing flight leg: {ex}")
                     continue
@@ -205,11 +206,11 @@ def generate_flight_notifications():
                     leg_info.update({"hotel_details": each_hotel_info.get("hotel_details", {})})
                     leg_info.update({"booking_id": each_hotel_info.get("booking_id", "")})
                     if pre:
-                        final_data_to_share["Pre Info"].setdefault(each_pax_id, []).append(leg_info)
+                        final_data_to_share["pre_info"].setdefault(each_pax_id, []).append(leg_info)
                     elif current:
-                        final_data_to_share["Current Info"].setdefault(each_pax_id, []).append(leg_info)
+                        final_data_to_share["current_info"].setdefault(each_pax_id, []).append(leg_info)
                     elif post:
-                        final_data_to_share["Post Info"].setdefault(each_pax_id, []).append(leg_info)
+                        final_data_to_share["post_info"].setdefault(each_pax_id, []).append(leg_info)
             except Exception as ex:
                 print(f"Error occurred while processing hotel leg: {ex}")
                 continue
